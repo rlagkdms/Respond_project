@@ -73,10 +73,10 @@
     font-family: 'NeoDunggeunmoPro-Regular';
     top: 184px;
     width: calc(100% - 165px * 2); 
-    height: 2000px;
     padding-top: 150px;
     padding-left: 165px;
     padding-right: 165px;
+    margin-bottom: 500px;
 }
 
 #main-title{
@@ -96,53 +96,45 @@
 
 #music-list-div{
     width: 100%;
-    height: 500px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
 
-#footer{
-    width: 100%;
-    height: 263px;
-    background-color: black;
-    position: relative;
-    bottom: 0;
+.song-div{
+    width: calc(100% - 35px * 2);
+    height: 100px;
+    margin-left: 35px;
+    margin-right: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.song-profile{
+    display: flex;
+    align-items: center;
+}
+.song-image{
+    margin-right: 50px;
+}
+.song-info{
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-#footer-logo{
-    margin-top: 36px;
-    margin-bottom: 32px;
-}
-
-#app{
-    display: flex;
-    column-gap: 10px;
-    margin-bottom: 27px;
-}
-
-#footer-line{
-    width: 90%;
-    height: 1px;
-    background-color: white;
-    margin-bottom: 14px;
-}
-
-#info{
-    display: flex;
-    position: relative;
-    align-items: center;
     justify-content: center;
-    color: white;
-    column-gap: 6px;
-    margin-bottom: 3px;
+    line-height: 30px;
+}
+.song-title{
+    font-size: 25px;
+}
+.song-singer{
+    font-size: 20px;
+}
+.pause-btn{
+    justify-self: end;
+    justify-content: end;
+    font-size: 50px;
 }
 
-#privacy{
-    display: flex;
-    color: white;
-    align-items: center;
-    column-gap: 6px;
-}
