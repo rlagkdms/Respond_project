@@ -29,7 +29,7 @@
     position: relative;
     margin-left: 153px;
     top: -117px;
-    animation: rotate_image 2s linear infinite;
+    animation: none;
     transform-origin: 50% 50%;
 }
 @keyframes rotate_image{
@@ -60,14 +60,37 @@
     font-size: 18px;
     font-family: 'NeoDunggeunmoPro-Regular';
 }
+#music-length{
+    width: 100%;
+    height: 50px;
+    /* background-color: aqua; */
+}
+.progress-container {
+    margin: 5px 0;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #DCDCDC;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.20);
+    margin-top: 22px;
+    margin-bottom: 25px;
+}
 
+.progress {
+    height: 4px;
+    width: 0%;
+    transition: width 0.1s linear;
+    border-radius: 10px;
+    background: #000;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.20);
+}
 #music-control{
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 90px;
+    height: 32px;
 }
-
 #main{
     position: relative;
     font-family: 'NeoDunggeunmoPro-Regular';
@@ -132,6 +155,7 @@
 .song-singer{
     font-size: 20px;
 }
+
 .pause-btn{
     justify-self: end;
     justify-content: end;

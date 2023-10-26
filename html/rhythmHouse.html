@@ -29,11 +29,14 @@
         </div>
         <div id="play-music-div">
             <div id="music-info"></div>
-            <div id="music-length"></div>
+                <audio id="audio" class="audio" onloadstart="this.volume=0.5"></audio>  
+                <div class="progress-container" id="progress-container">
+                    <div class="progress" id="progress"></div>
+                </div> 
             <div id="music-control">
-                <iconify-icon icon="teenyicons:left-solid"></iconify-icon>
-                <iconify-icon icon="ion:pause"></iconify-icon>
-                <iconify-icon icon="teenyicons:right-solid"></iconify-icon>
+                <div id="before-song" onclick="playPrevSong()"><iconify-icon icon="streamline:interface-arrows-button-left-arrow-keyboard-left"></iconify-icon></div>
+                <div id="pause-song" onclick="playSong()"><iconify-icon icon="mdi:play"></iconify-icon></div>
+                <div id="next-song" onclick="playNextSong()"><iconify-icon icon="streamline:interface-arrows-button-right-arrow-right-keyboard"></iconify-icon></div>
             </div>
         </div>
     </div>
@@ -45,8 +48,6 @@
 
         </div>
     </div> 
-
-    <div id="footer">
     
     <div id="footer">
         <img id="footer-logo" src="../img/logo.png" style="width: 127px; height: 32px;">
@@ -68,7 +69,6 @@
             <img src="../img/dot.png">
             <p>Privacy Policy</p>
         </div>
-    </div>
     </div>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="../js/rhythmHouse.js"></script>
