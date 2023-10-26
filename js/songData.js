@@ -30,10 +30,10 @@ const songData = [
         image: "../img/song-img/AngelWhoLostHerWings.png"
     },
     {
-        title: "toYou",
+        title: "그대에게",
         singer: "신해철",
-        audio: "../songs/그대에게 - 신해철.mp3",
-        image: "../img/song-img/그대에게.png"
+        audio: "../songs/toYou.mp3",
+        image: "../img/song-img/toYou.png"
     },
     {
         title: "잘못된 만남",
