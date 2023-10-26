@@ -2,35 +2,35 @@ const songData = [
     {
         title: "흐린 기억 속의 그대",
         singer: "현진영",
-        audio: "../songs/흐린 기억 속의 그대 - 현진영.mp3",
-        image: "../img/song-img/흐린 기억 속의 그대.png"
+        audio: "../songs/YouInMyCloudyMemories.mp3",
+        image: "../img/song-img/YouInMyCloudyMemories.png"
     },
     {
         title: "DOC와 함께 춤을",
         singer: "DJ DOC",
-        audio: "../songs/DOC와 함께 춤을 - DJ DOC.mp3",
-        image: "../img/song-img/DOC와 함께 춤을.png"
+        audio: "../songs/DanceWithDOC.mp3",
+        image: "../img/song-img/DanceWithDOC.png"
     },
     {
         title: "난 알아요",
         singer: "서태지와 아이들",
-        audio: "../songs/난 알아요 - 서태지와 아이들.mp3",
-        image: "../img/song-img/난 알아요.png"
+        audio: "../songs/IKnowIt.mp3",
+        image: "../img/song-img/IKnowIt.png"
     },
     {
         title: "애상",
         singer: "쿨",
-        audio: "../songs/애상 - 쿨.mp3",
-        image: "../img/song-img/애상.png"
+        audio: "../songs/Sorrow.mp3",
+        image: "../img/song-img/Sorrow.png"
     },
     {
         title: "날개 잃은 천사",
         singer: "룰라",
-        audio: "../songs/날개 잃은 천사 - 룰라.mp3",
-        image: "../img/song-img/날개 잃은 천사.png"
+        audio: "../songs/AngelWhoLostHerWings.mp3",
+        image: "../img/song-img/AngelWhoLostHerWings.png"
     },
     {
-        title: "그대에게",
+        title: "toYou",
         singer: "신해철",
         audio: "../songs/그대에게 - 신해철.mp3",
         image: "../img/song-img/그대에게.png"
@@ -38,91 +38,91 @@ const songData = [
     {
         title: "잘못된 만남",
         singer: "김건모",
-        audio: "../songs/잘못된 만남 - 김건모.mp3",
-        image: "../img/song-img/잘못된 만남.png"
+        audio: "../songs/WrongMeeting.mp3",
+        image: "../img/song-img/WrongMeeting.png"
     },
     {
         title: "이별공식",
         singer: "Ref",
-        audio: "../songs/이별공식 - Ref.mp3",
-        image: "../img/song-img/이별공식.png"
+        audio: "../songs/BreakUpFormula.mp3",
+        image: "../img/song-img/BreakUpFormula.png"
     },
     {
         title: "파도",
         singer: "유엔(UN)",
-        audio: "../songs/파도 - UN.mp3",
-        image: "../img/song-img/파도.png"
+        audio: "../songs/Wave.mp3",
+        image: "../img/song-img/Wave.png"
     },
     {
         title: "버스 안에서",
         singer: "자자",
-        audio: "../songs/버스 안에서 - 자자.mp3",
-        image: "../img/song-img/버스 안에서.png"
+        audio: "../songs/InTheBus.mp3",
+        image: "../img/song-img/InTheBus.png"
     },
     {
         title: "나를 돌아봐",
         singer: "듀스",
-        audio: "../songs/나를 돌아봐 - 듀스.mp3",
-        image: "../img/song-img/나를 돌아봐.png"
+        audio: "../songs/lookBackAtMe.mp3",
+        image: "../img/song-img/lookBackAtMe.png"
     },
     {
         title: "뿌요뿌요",
         singer: "유피",
-        audio: "../songs/뿌요뿌요 - 유피.mp3",
-        image: "../img/song-img/뿌요뿌요.png"
+        audio: "../songs/PuyoPuyo.mp3",
+        image: "../img/song-img/PuyoPuyo.png"
     },
     {
         title: "널 사랑하니까",
         singer: "신승훈",
-        audio: "../songs/널 사랑하니까 - 신승훈",
-        image: "../img/song-img/널 사랑하니까.png"
+        audio: "../songs/BecauseILoveYou",
+        image: "../img/song-img/BecauseILoveYou.png"
     },
     {
         title: "멍",
         singer: "김현정",
-        audio: "../songs/멍 - 김현정.mp3",
-        image: "../img/song-img/멍.png"
+        audio: "../songs/Bruise.mp3",
+        image: "../img/song-img/Bruise.png"
     },
     {
         title: "Never Ending Story",
         singer: "부활",
-        audio: "../songs/Never Ending Story - 부활.mp3",
-        image: "../img/song-img/Never Ending Story.png"
+        audio: "../songs/NeverEndingStory.mp3",
+        image: "../img/song-img/NeverEndingStory.png"
     },
     {
         title: "내 눈물 모아",
         singer: "서지원",
-        audio: "../songs/내 눈물 모아 - 서지원.mp3",
-        image: "../img/song-img/내 눈물 모아.png"
+        audio: "../songs/CollectMyTears.mp3",
+        image: "../img/song-img/CollectMyTears.png"
     },
     {
         title: "아름다운 구속",
         singer: "김종서",
-        audio: "../songs/아름다운 구속 - 김종서.mp3",
-        image: "../img/song-img/아름다운 구속.png"
+        audio: "../songs/BeautifulRedemption.mp3",
+        image: "../img/song-img/BeautifulRedemption.png"
     },
     {
         title: "순정",
         singer: "코요태",
-        audio: "../songs/순정 코요태.mp3",
-        image: "../img/song-img/순정.png"
+        audio: "../songs/Pure.mp3",
+        image: "../img/song-img/Pure.png"
     },
     {
         title: "어젯밤 이야기",
         singer: "소방차",
-        audio: "../songs/어젯밤 이야기 - 소방차.mp3",
-        image: "../img/song-img/어젯밤 이야기.png"
+        audio: "../songs/LastNight'sStory.mp3",
+        image: "../img/song-img/LastNight'sStory.png"
     },
     {
         title: "하여가",
         singer: "서태지와 아이들",
-        audio: "../songs/하여가 - 서태지와 아이들.mp3",
-        image: "../img/song-img/하여가.png"
+        audio: "../songs/Let'sDoIt.mp3",
+        image: "../img/song-img/Let'sDoIt.png"
     },
     {
         title: "White Love",
         singer: "터보",
-        audio: "../songs/White Love - 터보.mp3",
-        image: "../img/song-img/White Love.png"
+        audio: "../songs/WhiteLove.mp3",
+        image: "../img/song-img/WhiteLove.png"
     },
 ]
