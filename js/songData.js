@@ -1,9 +1,9 @@
 const songData = [
     {
-        title: "흐린 기억 속의 그대",
-        singer: "현진영",
-        audio: "../songs/YouInMyCloudyMemories.mp3",
-        image: "../img/song-img/YouInMyCloudyMemories.png"
+        title: "그대에게",
+        singer: "신해철",
+        audio: "../songs/toYou.mp3",
+        image: "../img/song-img/toYou.png"
     },
     {
         title: "DOC와 함께 춤을",
@@ -30,10 +30,10 @@ const songData = [
         image: "../img/song-img/AngelWhoLostHerWings.png"
     },
     {
-        title: "그대에게",
-        singer: "신해철",
-        audio: "../songs/toYou.mp3",
-        image: "../img/song-img/toYou.png"
+        title: "흐린 기억 속의 그대",
+        singer: "현진영",
+        audio: "../songs/YouInMyCloudyMemories.mp3",
+        image: "../img/song-img/YouInMyCloudyMemories.png"
     },
     {
         title: "잘못된 만남",
