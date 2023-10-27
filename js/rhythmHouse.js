@@ -12,12 +12,25 @@ audio.addEventListener('timeupdate', updateProgress);
 progressContainer.addEventListener('click', changeProgress);
 
 let songIndex = 0;
+let time = 0;
+
+if(!(localStorage.getItem("songData") === null)){
+    songIndex = localStorage.getItem("songData");
+}
+if(!(localStorage.getItem("currentTime") === null)){
+    time = localStorage.getItem("currentTime")
+}
 
 window.onload = function() {
+    audio.currentTime = time;
+    playBtn.style.fontSize = "20px";
+    audio.classList.add('play');
     constructPlaylist();
     loadSong(songData[songIndex]);
-    
-    playBtn.style.fontSize = "32px";
+    document.getElementsByClassName('pause-btn')[songIndex].classList.add('play');
+    recordCircle1.style.animation = "rotate_image 2s linear infinite";
+    recordCircle2.style.animation = "rotate_image 2s linear infinite";
+    currectPlayList();
 }
     
 function loadSong(song){
@@ -26,7 +39,7 @@ function loadSong(song){
     let musicSinger = song.singer;
     let musicInfo = document.getElementById('music-info');
     musicInfo.innerText = `${musicTitle} - ${musicSinger}`;
-    console.log(songIndex);
+    localStorage.setItem("songData", songIndex);
 }
 
 function currectPlayList(){
@@ -190,6 +203,7 @@ function playMusic(){
 
 function updateProgress(e){ //timeupdate
     const {duration, currentTime} = e.srcElement;
+    localStorage.setItem("currentTime", currentTime);
     const progressPer = (currentTime / duration) * 100;
     progress.style.width = `${progressPer}%`;
 }
