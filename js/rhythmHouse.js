@@ -14,18 +14,38 @@ progressContainer.addEventListener('click', changeProgress);
 let songIndex = 0;
 
 window.onload = function() {
-    loadSong(songData[songIndex]);
-
     constructPlaylist();
+    loadSong(songData[songIndex]);
+    
     playBtn.style.fontSize = "32px";
 }
     
 function loadSong(song){
     audio.src = song.audio;
-    let musicTitle = songData[songIndex].title;
-    let musicSinger = songData[songIndex].singer;
+    let musicTitle = song.title;
+    let musicSinger = song.singer;
     let musicInfo = document.getElementById('music-info');
     musicInfo.innerText = `${musicTitle} - ${musicSinger}`;
+    console.log(songIndex);
+}
+
+function currectPlayList(){
+    let songs = document.getElementsByClassName('pause-btn');
+    const isPlaying = document.getElementsByClassName('pause-btn')[songIndex].classList.contains('play');
+    if(isPlaying){
+        for(let data = 0; data<songs.length; data++){
+            if(data == songIndex){
+                songs[data].innerHTML = `<iconify-icon icon="bytesize:pause" id="songList-pause"></iconify-icon>`;
+            }else{
+                songs[data].innerHTML = `<iconify-icon icon="mdi:play"></iconify-icon>`;
+            }
+        }
+    }else{
+        for(let data = 0; data<songs.length; data++){
+            songs[data].innerHTML = `<iconify-icon icon="mdi:play"></iconify-icon>`;
+        }
+    }
+    // console.log(isPlaying2, index);
 }
 
 function constructPlaylist() {
@@ -56,17 +76,62 @@ function constructPlaylist() {
         singerDiv.className = "song-singer";
         singerDiv.innerHTML = singer;
 
+        let controlMusic = document.createElement('div');
+        controlMusic.innerHTML = `<iconify-icon icon="mdi:play"></iconify-icon>`
+        controlMusic.className = 'pause-btn';
+        controlMusic.onclick = (e) => playCurrectSong(e);
+
         songInfo.appendChild(titleDiv);
         songInfo.appendChild(singerDiv);
 
         songProfile.appendChild(imageDiv);
         songProfile.appendChild(songInfo);
 
-        songDiv.appendChild(songProfile);    
-        songDiv.innerHTML += `<iconify-icon icon="mdi:play" class="pause-btn"></iconify-icon>`
+        songDiv.appendChild(songProfile);   
+        songDiv.appendChild(controlMusic); 
+        // songDiv.innerHTML += `<iconify-icon icon="mdi:play" class="pause-btn"></iconify-icon>`
 
         playlistDiv.appendChild(songDiv);
     }
+}
+
+function playCurrectSong(e){
+    let songDiv = document.getElementsByClassName('song-div');
+    // let position = 0;
+    for(let data in songDiv){
+        if(e.target.parentNode.parentNode === songDiv[data]){
+            // position = data;
+            songIndex = data;
+        }
+    }
+    songDirection();
+}
+
+function songDirection(){
+    const isPlaying = document.getElementsByClassName('pause-btn')[songIndex].classList.contains('play');
+    if(isPlaying){
+        pauseList();
+    }else{
+        playList();
+    }
+}
+
+function pauseList(){
+    document.getElementsByClassName('pause-btn')[songIndex].classList.remove('play');
+    document.getElementsByClassName('pause-btn')[songIndex].innerHTML = `<iconify-icon icon="mdi:play"></iconify-icon>`;
+    pauseMusic();
+}
+
+function playList(){
+    document.getElementsByClassName('pause-btn')[songIndex].classList.add('play')
+    const songDiv = document.getElementsByClassName('pause-btn');
+    for(let song of songDiv){
+        song.innerHTML = `<iconify-icon icon="mdi:play"></iconify-icon>`        
+    }
+    songDiv[songIndex].innerHTML = `<iconify-icon icon="bytesize:pause" id="songList-pause"></iconify-icon>`
+
+    loadSong(songData[songIndex]);
+    playMusic();
 }
 
 function playSong(){
@@ -88,7 +153,7 @@ function playPrevSong(){
     playMusic();
 }
 
-function playNextSong(){
+function playNextSong(){ // ended
     songIndex++;
     
     if(songIndex > songData.length - 1){
@@ -96,7 +161,7 @@ function playNextSong(){
     }
 
     loadSong(songData[songIndex]);
-    playMusic();
+    playMusic(songIndex);
 }
 
 function pauseMusic(){
@@ -104,8 +169,10 @@ function pauseMusic(){
     playBtn.innerHTML = `<iconify-icon icon="mdi:play"></iconify-icon>`;
     playBtn.style.fontSize = "32px";
     audio.classList.remove('play');
+    document.getElementsByClassName('pause-btn')[songIndex].classList.remove('play');
     recordCircle1.style.animation = "none";
     recordCircle2.style.animation = "none";
+    currectPlayList();
     // animation: rotate_image 2s linear infinite;
 }
 
@@ -114,17 +181,20 @@ function playMusic(){
     playBtn.innerHTML = `<iconify-icon icon="bytesize:pause" id="pause-song"></iconify-icon>`;
     playBtn.style.fontSize = "20px";
     audio.classList.add('play');
+    document.getElementsByClassName('pause-btn')[songIndex].classList.add('play');
     recordCircle1.style.animation = "rotate_image 2s linear infinite";
     recordCircle2.style.animation = "rotate_image 2s linear infinite";
+    currectPlayList();
+    // songDirection(index);
 }
 
-function updateProgress(e){
+function updateProgress(e){ //timeupdate
     const {duration, currentTime} = e.srcElement;
     const progressPer = (currentTime / duration) * 100;
     progress.style.width = `${progressPer}%`;
 }
 
-function changeProgress(e){
+function changeProgress(e){ // click
     const width = e.target.clientWidth;
     const offsetX = e.offsetX;
     const duration = audio.duration;
