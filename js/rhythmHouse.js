@@ -73,7 +73,7 @@ function constructPlaylist() {
 
         let imageDiv = document.createElement('div');
         imageDiv.className = "song-image";
-        imageDiv.innerHTML = `<img src="${image}" />`
+        imageDiv.innerHTML = `<img src="${image}" class="img"/>`
 
         let songProfile = document.createElement('div');
         songProfile.className = 'song-profile';
