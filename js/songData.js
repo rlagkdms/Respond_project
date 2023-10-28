@@ -74,7 +74,7 @@ const songData = [
     {
         title: "널 사랑하니까",
         singer: "신승훈",
-        audio: "../songs/BecauseILoveYou",
+        audio: "../songs/BecauseILoveYou.mp3",
         image: "../img/song-img/BecauseILoveYou.png"
     },
     {
