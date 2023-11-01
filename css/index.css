@@ -2,3 +2,48 @@
     margin: 0;
     padding: 0;
 }
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+#section1-container {
+    background-image: url("../img/section1.png");
+    background-size: cover;
+}
+
+#section2-container img {
+    margin-left: 90px;
+    padding-top: 239.5px;
+}
+
+#section3-container {
+    background-image: url("../img/section3.png");
+    background-size: cover;
+}
+
+#section4-container img {
+    margin-left: 90px;
+    padding-top: 178px;
+}
+
+#section5-container img {
+    margin-left: 129px;
+    padding-top: 106px;
+}
+
+#section6-container {
+    background-image: url("../img/section6.png");
+    background-size: cover;
+}
+
+#section7-container img {
+    margin-left: 669px;
+    padding-top: 188px;
+}
+
+#section8-container img {
+    margin-left: 151px;
+    padding-top: 281px;
+}
