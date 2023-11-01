@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'rose';
+    src: url("../font/a장미다방.otf");
+}
+
+* {
+    font-family: 'rose';
+}
