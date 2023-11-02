@@ -167,6 +167,10 @@
     font-size: 30px;
 }
 
+span {
+    color: #FFC700;
+}
+
 @media screen and (max-width: 1000px) {
     #main{
         position: relative;
