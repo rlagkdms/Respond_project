@@ -53,3 +53,12 @@ main {
 span {
     color: #FFC700;
 }
+
+#chat-input {
+    background: none;
+    border: none;
+    caret-color: auto;
+    color: #fff;
+    font-family: 'NeoDunggeunmo';
+    font-size: 20px;
+}
