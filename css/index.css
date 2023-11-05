@@ -221,8 +221,8 @@ section {
         height: 230px;
         line-height: 22px;
     }
-    #section3-title,
-    #section6-title {
+    .section3-title,
+    .section6-title {
         width: 380px;
         margin-left: 20%;
     }
