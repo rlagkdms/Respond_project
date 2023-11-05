@@ -9,7 +9,7 @@ document.addEventListener('click', function(event) {
     }
 });
 
-const additionalText = [
+const idText = [
     '',
     'freedom',
     '허리케인블루',
@@ -30,7 +30,7 @@ const additionalText = [
     '스피드'
 ];
 
-const textArray = [
+const chatText = [
     '',
     '하이루!',
     '하이용',
@@ -53,8 +53,8 @@ const textArray = [
 
 const chatArray = [];
 
-for (let i = 0; i < additionalText.length; i++) {
-    const combinedElement = additionalText[i] + textArray[i];
+for (let i = 0; i < idText.length; i++) {
+    const combinedElement = idText[i] + '\t' + chatText[i];
     chatArray.push(combinedElement);
 }
 
@@ -66,6 +66,11 @@ function printText() {
         const combinedText = chatArray[currentIndex];
         const textElement = document.createElement('p');
         textElement.textContent = combinedText;
+
+        if (combinedText.includes('허리케인블루')) {
+            textElement.style.color = '#FFF849';
+        }
+
         chatBox.appendChild(textElement);
         currentIndex++;
     } else {
@@ -73,5 +78,4 @@ function printText() {
     }
 }
 
-const intervalId = setInterval(printText, 2000);
-
+const intervalId = setInterval(printText, 1500);
