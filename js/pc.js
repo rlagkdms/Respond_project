@@ -88,7 +88,8 @@ chatInput.addEventListener('keyup', function(event) {
         const message = chatInput.value;
         chatText.push(message);
         idText.push('제임스본드');
-        chatArray.push('제임스본드' + '\t' + message);
+        const newChat = '제임스본드' + '\t' + message;
+        chatArray.splice(currentIndex, 0, newChat);
         chatInput.value = '';
         displayChatArray();
     }
