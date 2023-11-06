@@ -1,4 +1,4 @@
-document.getElementById('chat-title').addEventListener('click', function() {
+document.getElementById('chat').addEventListener('click', function() {
     chatInput.style.display = 'inline-block';
     chatInput.focus();
 });
@@ -8,6 +8,9 @@ document.addEventListener('click', function(event) {
         chatInput.style.display = 'none';
     }
 });
+
+const chatInput = document.getElementById('chat-input');
+const chatArray = [];
 
 const idText = [
     '',
@@ -45,37 +48,44 @@ const chatText = [
     'ID를 같이 쓰는 사람이 있습니까',
     '안녕 인절미?',
     '가끔 친구가...',
-    '얼마전에 번개 했는데 압고정 맥도날드 앞에서 만나기로 한 그녀를 못 났네요',
+    '얼마전에 번개 했는데 압구정 맥도날드 앞에서 만나기로 한 그녀를 못 만났네요',
     '나우누리에서 용의신전 보신분 있으신가여? O,.ㅇ',
     '안녕 라이더37..!',
     '애드립 동호회 회원이신분 ? 사운드 블라스터 사고싶은데 어떻게 할까요'
 ];
-
-const chatArray = [];
 
 for (let i = 0; i < idText.length; i++) {
     const combinedElement = idText[i] + '\t' + chatText[i];
     chatArray.push(combinedElement);
 }
 
-const chatBox = document.getElementById('chat-box');
 let currentIndex = 0;
 
-function printText() {
+function displayChatArray() {
     if (currentIndex < chatArray.length) {
-        const combinedText = chatArray[currentIndex];
+        const chatBox = document.getElementById('chat-box');
         const textElement = document.createElement('p');
-        textElement.textContent = combinedText;
+        textElement.textContent = chatArray[currentIndex];
 
-        if (combinedText.includes('허리케인블루')) {
+        if (chatArray[currentIndex].includes('허리케인블루')) {
             textElement.style.color = '#FFF849';
         }
 
         chatBox.appendChild(textElement);
         currentIndex++;
-    } else {
-        clearInterval(intervalId);
+        setTimeout(displayChatArray, 2000);
     }
 }
 
-const intervalId = setInterval(printText, 1500);
+setTimeout(displayChatArray, 0);
+
+chatInput.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        const message = chatInput.value;
+        chatText.push(message);
+        idText.push('제임스본드');
+        chatArray.push('제임스본드' + '\t' + message);
+        chatInput.value = '';
+        displayChatArray();
+    }
+});
