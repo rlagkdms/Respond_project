@@ -10,6 +10,7 @@ document.addEventListener('click', function(event) {
 });
 
 const chatInput = document.getElementById('chat-input');
+const chatBox = document.getElementById('chat-box');
 const chatArray = [];
 
 const idText = [
@@ -70,6 +71,9 @@ function displayChatArray() {
         if (chatArray[currentIndex].includes('허리케인블루')) {
             textElement.style.color = '#FFF849';
         }
+
+        chatBox.appendChild(textElement);
+        chatBox.scrollTop = chatBox.scrollHeight;
 
         chatBox.appendChild(textElement);
         currentIndex++;
