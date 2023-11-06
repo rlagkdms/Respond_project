@@ -42,9 +42,10 @@ main {
     height: 600px;
     color: #FFF;
     font-size: 20px;
-    line-height: 30px;
+    line-height: 35px;
     margin: 10px 40px;
     letter-spacing: 3px;
+    overflow-y: hidden;
 }
 
 #chat {
