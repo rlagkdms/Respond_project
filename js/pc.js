@@ -17,6 +17,7 @@ const chatArray = [];
 chatId.textContent = 'ID 입력 : ';
 
 const idText = [
+    '',
     'freedom',
     '허리케인블루',
     '아침이슬',
@@ -25,18 +26,19 @@ const idText = [
     '바다소년',
     '호랑77',
     '해피엔드',
-    '허리케인블루',
+    '제임스본드',
     '여인2',
     '해피엔드',
     '라이더37',
-    '여인2',
-    'freedom',
-    '허리케인블루',
+    '유르스윌리스',
+    'freeiron85',
+    '토벌',
     '인절미',
     '스피드'
 ];
 
 const chatText = [
+    '',
     '하이루!',
     '하이용',
     '하이룽 방가방가',
@@ -85,9 +87,48 @@ function displayChatArray() {
         currentIndex++;
         setTimeout(displayChatArray, 2000);
     }
+    else {
+        if (leavingMessageDisplayed) {
+            chatInput.disabled = false;
+            chatInput.focus();
+            return;
+        }
+
+        const leavingMessages = [];
+        const remainingIdText = [...idText];
+        remainingIdText.shift();
+        remainingIdText.splice(1, 1);
+        const usedIds = [];
+
+        for (let i = 0; i < 5 && remainingIdText.length > 0; i++) {
+            const availableIds = remainingIdText.filter(id => !usedIds.includes(id) && id !== '');
+            if (availableIds.length > 0) {
+                const randomIndex = Math.floor(Math.random() * availableIds.length);
+                const leavingMessage = document.createElement('p');
+                leavingMessage.textContent = availableIds[randomIndex] + '  님이 채팅을 나가셨습니다.';
+                leavingMessage.style.color = '#fff849';
+                leavingMessages.push(leavingMessage);
+                usedIds.push(availableIds[randomIndex]);
+                remainingIdText.splice(remainingIdText.indexOf(availableIds[randomIndex]), 1);
+            }
+        }
+        leavingMessages.forEach((message, index) => {
+            setTimeout(() => {
+                chatBox.appendChild(message);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, index * 1000);
+        });
+
+        leavingMessageDisplayed = true;
+
+        chatInput.disabled = false;
+        chatInput.focus();
+    }
 }
 
 setTimeout(displayChatArray, 0);
+
+let leavingMessageDisplayed = false;
 
 chatInput.addEventListener('keyup', function (event) {
     if (event.key === 'Enter') {
