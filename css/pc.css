@@ -50,14 +50,8 @@ main {
 
 #chat {
     color: #FFF;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-size: 19px;
     margin: 10px 20px 0 30px;
-}
-
-span {
-    color: #FFC700;
 }
 
 #chat-input {
@@ -66,8 +60,12 @@ span {
     caret-color: auto;
     color: #fff;
     font-family: 'NeoDunggeunmo';
-    font-size: 20px;
+    font-size: 19px;
     outline: none;
     line-height: 30px;
     width: calc(100% - 100px);
+}
+
+.my_chat {
+    color: #FFF849;
 }

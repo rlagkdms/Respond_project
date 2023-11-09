@@ -11,10 +11,12 @@ document.addEventListener('click', function(event) {
 
 const chatInput = document.getElementById('chat-input');
 const chatBox = document.getElementById('chat-box');
+const chatId = document.getElementById('chat-id');
 const chatArray = [];
 
+chatId.textContent = 'ID 입력 : ';
+
 const idText = [
-    '',
     'freedom',
     '허리케인블루',
     '아침이슬',
@@ -35,7 +37,6 @@ const idText = [
 ];
 
 const chatText = [
-    '',
     '하이루!',
     '하이용',
     '하이룽 방가방가',
@@ -61,17 +62,22 @@ for (let i = 0; i < idText.length; i++) {
 }
 
 let currentIndex = 0;
+let firstInput = true;
 
 function displayChatArray() {
+    if (firstInput) {
+        return;
+    }
+
     if (currentIndex < chatArray.length) {
         const chatBox = document.getElementById('chat-box');
         const textElement = document.createElement('p');
         textElement.textContent = chatArray[currentIndex];
-
-        if (chatArray[currentIndex].includes('허리케인블루')) {
-            textElement.style.color = '#FFF849';
+        // 조건문 -> 이 글이 나의 글인지
+        console.log(idText);
+        if(idText == idText[0]) {
+            textElement.className = "my_chat";
         }
-
         chatBox.appendChild(textElement);
         chatBox.scrollTop = chatBox.scrollHeight;
 
@@ -86,48 +92,58 @@ setTimeout(displayChatArray, 0);
 chatInput.addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
         const message = chatInput.value;
-        chatText.push(message);
-        idText.push('제임스본드');
-        const newChat = '제임스본드' + '\t' + message;
-        chatArray.splice(currentIndex, 0, newChat);
+
+        if (firstInput) {
+            idText.unshift(message);
+            firstInput = false;
+            chatId.textContent = 'Chat : ';
+            chatBox.textContent = message + "  님이 입장하셨습니다.";
+        } else {
+            chatText.push(message);
+            const newChat = message;
+            chatArray.splice(currentIndex, 0, idText[0] + '\t' + newChat);
+        }
+
         chatInput.value = '';
+
         displayChatArray();
     }
 });
 
-let audio = document.getElementById('audio');
+
+// let audio = document.getElementById('audio');
 
 
-audio.addEventListener('ended', playNextSong);
-audio.addEventListener('timeupdate', updateProgress);
+// audio.addEventListener('ended', playNextSong);
+// audio.addEventListener('timeupdate', updateProgress);
 
-let songIndex = 0;
-let time = 0;
+// let songIndex = 0;
+// let time = 0;
 
-if(!(localStorage.getItem("songData") === null)){
-    songIndex = localStorage.getItem("songData");
-}
-if(!(localStorage.getItem("currentTime") === null)){
-    time = localStorage.getItem("currentTime")
-}
+// if(!(localStorage.getItem("songData") === null)){
+//     songIndex = localStorage.getItem("songData");
+// }
+// if(!(localStorage.getItem("currentTime") === null)){
+//     time = localStorage.getItem("currentTime")
+// }
 
-window.onload = function() {
-    audio.src = songData[songIndex].audio;
-    audio.currentTime = time;
-}
+// window.onload = function() {
+//     audio.src = songData[songIndex].audio;
+//     audio.currentTime = time;
+// }
 
-function playNextSong(){ // ended
-    songIndex++;
+// function playNextSong(){ // ended
+//     songIndex++;
     
-    if(songIndex > songData.length - 1){
-        songIndex = 0;
-    }
-    localStorage.setItem("songData", songIndex);
-    audio.src = songData[songIndex].audio;
-    audio.play();
-}
+//     if(songIndex > songData.length - 1){
+//         songIndex = 0;
+//     }
+//     localStorage.setItem("songData", songIndex);
+//     audio.src = songData[songIndex].audio;
+//     audio.play();
+// }
 
-function updateProgress(e){ //timeupdate
-    const {duration, currentTime} = e.srcElement;
-    localStorage.setItem("currentTime", currentTime);
-}
+// function updateProgress(e){ //timeupdate
+//     const {duration, currentTime} = e.srcElement;
+//     localStorage.setItem("currentTime", currentTime);
+// }
