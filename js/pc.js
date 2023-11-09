@@ -22,8 +22,9 @@ const idText = [
     '허리케인블루',
     '아침이슬',
     '태지 boys',
-    '고라니',
+    '하자왕',
     '바다소년',
+    '고라니',
     '호랑77',
     '해피엔드',
     '제임스본드',
@@ -32,9 +33,13 @@ const idText = [
     '라이더37',
     '유르스윌리스',
     'freeiron85',
-    '토벌',
+    '허리케인블루',
     '인절미',
-    '스피드'
+    '스피드',
+    '성숑',
+    'k2sysop',
+    'freedom',
+    '리듬속의'
 ];
 
 const chatText = [
@@ -47,15 +52,20 @@ const chatText = [
     '안냐세요. 바다소년임미다. (-_-·v<-- 겸손한 브이)',
     '아 오늘 열쒸미 놀았네여~~!!',
     '이수현님이 맞습니까?',
-    '예전에 더어드웨이브 핵커스 클럽 회원이셨던분?',
+    '오늘의 이모티콘 배포합니다~~ (**____**)//',
     '끄덕끄덕...',
     'ID를 같이 쓰는 사람이 있습니까',
+    '오랫만. 반갑읍니다~~',
     '안녕 인절미?',
-    '가끔 친구가...',
     '얼마전에 번개 했는데 압구정 맥도날드 앞에서 만나기로 한 그녀를 못 만났네요',
     '나우누리에서 용의신전 보신분 있으신가여? O,.ㅇ',
+    '애드립 동호회 회원이신분 ? 사운드 블라스터 사고싶은데 어떻게 할까요',
     '안녕 라이더37..!',
-    '애드립 동호회 회원이신분 ? 사운드 블라스터 사고싶은데 어떻게 할까요'
+    '누구 오늘 단성사에서 터미네이터2 보고 오신 분 안계시남?',
+    '예전에 더어드웨이브 핵커스 클럽 회원이셨던분?',
+    '오늘 터미네이터2 보고 왔는데 크으..-_-;;',
+    '자장면이나 먹고싶네요. 종로 중식집에서 번개하실분?',
+    '저희 정모 언제할까요? ^___^ ;;'
 ];
 
 for (let i = 0; i < idText.length; i++) {
@@ -152,39 +162,39 @@ chatInput.addEventListener('keyup', function (event) {
     }
 });
 
-// let audio = document.getElementById('audio');
+let audio = document.getElementById('audio');
 
 
-// audio.addEventListener('ended', playNextSong);
-// audio.addEventListener('timeupdate', updateProgress);
+audio.addEventListener('ended', playNextSong);
+audio.addEventListener('timeupdate', updateProgress);
 
-// let songIndex = 0;
-// let time = 0;
+let songIndex = 0;
+let time = 0;
 
-// if(!(localStorage.getItem("songData") === null)){
-//     songIndex = localStorage.getItem("songData");
-// }
-// if(!(localStorage.getItem("currentTime") === null)){
-//     time = localStorage.getItem("currentTime")
-// }
+if(!(localStorage.getItem("songData") === null)){
+    songIndex = localStorage.getItem("songData");
+}
+if(!(localStorage.getItem("currentTime") === null)){
+    time = localStorage.getItem("currentTime")
+}
 
-// window.onload = function() {
-//     audio.src = songData[songIndex].audio;
-//     audio.currentTime = time;
-// }
+window.onload = function() {
+    audio.src = songData[songIndex].audio;
+    audio.currentTime = time;
+}
 
-// function playNextSong(){ // ended
-//     songIndex++;
+function playNextSong(){ // ended
+    songIndex++;
     
-//     if(songIndex > songData.length - 1){
-//         songIndex = 0;
-//     }
-//     localStorage.setItem("songData", songIndex);
-//     audio.src = songData[songIndex].audio;
-//     audio.play();
-// }
+    if(songIndex > songData.length - 1){
+        songIndex = 0;
+    }
+    localStorage.setItem("songData", songIndex);
+    audio.src = songData[songIndex].audio;
+    audio.play();
+}
 
-// function updateProgress(e){ //timeupdate
-//     const {duration, currentTime} = e.srcElement;
-//     localStorage.setItem("currentTime", currentTime);
-// }
+function updateProgress(e){ //timeupdate
+    const {duration, currentTime} = e.srcElement;
+    localStorage.setItem("currentTime", currentTime);
+}
