@@ -73,15 +73,14 @@ function displayChatArray() {
         const chatBox = document.getElementById('chat-box');
         const textElement = document.createElement('p');
         textElement.textContent = chatArray[currentIndex];
-        // 조건문 -> 이 글이 나의 글인지
-        console.log(idText);
-        if(idText == idText[0]) {
-            textElement.className = "my_chat";
+
+        if (!firstInput && textElement.textContent.includes(idText[0])) {
+            textElement.style.color = '#fff849';
         }
+
         chatBox.appendChild(textElement);
         chatBox.scrollTop = chatBox.scrollHeight;
 
-        chatBox.appendChild(textElement);
         currentIndex++;
         setTimeout(displayChatArray, 2000);
     }
@@ -89,7 +88,7 @@ function displayChatArray() {
 
 setTimeout(displayChatArray, 0);
 
-chatInput.addEventListener('keyup', function(event) {
+chatInput.addEventListener('keyup', function (event) {
     if (event.key === 'Enter') {
         const message = chatInput.value;
 
@@ -109,7 +108,6 @@ chatInput.addEventListener('keyup', function(event) {
         displayChatArray();
     }
 });
-
 
 // let audio = document.getElementById('audio');
 

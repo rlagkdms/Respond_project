@@ -40,7 +40,7 @@ main {
 #chat-box {
     width: 85%;
     height: 600px;
-    color: #FFF;
+    color: #fff;
     font-size: 20px;
     line-height: 35px;
     margin: 10px 40px;
@@ -68,4 +68,6 @@ main {
 
 .my_chat {
     color: #FFF849;
+    font-size: 19px;
+    font-family: 'NeoDunggeunmo';
 }
