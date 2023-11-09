@@ -9,24 +9,29 @@
     <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
-    <nav id="nav-container">
-        <a href="index.html" id="nav-logo">
-            <img src="../img/logo.png" style="width: 127px; height: 32px;">
-        </a>
-        <ul id="nav-list">
-            <li id="nav-item"><a href="/html/pc.html" id="nav-link"><span>PC통신</span></a></li>
-            <li id="nav-item"><a href="#" id="nav-link">삐-삐</a></li>
-            <li id="nav-item"><a href="#" id="nav-link">패션-매거진</a></li>
-            <li id="nav-item"><a href="/html/rhythmHouse.html" id="nav-link">리듬하우-쓰</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="nav container">
+            <a href="../html/index.html" class="nav-logo">
+                <img src="../img/logo.png">
+            </a>
+            <div class="nav-toggle" id="nav_toggle">
+                <i class="bi bi-list"></i>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="../html/pc.html" class="nav-link">PC통신</a></li>
+                <li class="nav-item"><a href="" class="nav-link">삐-삐</a></li>
+                <li class="nav-item"><a href="" class="nav-link">패션-매거진</a></li>
+                <li class="nav-item"><a href="../html/rhythmHouse.html" class="nav-link">리듬하우-쓰</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <div id="pc-container">
             <p id="pc-title">대화방</p>
             <div class="pc-line"></div>
             <div id="chat-box"></div>
             <div class="pc-line"></div>
-            <p id="chat">Chat : <input type="text" id="chat-input"></p>
+            <p id="chat"><span id="chat-id"></span><input type="text" id="chat-input"></p>
         </div>
     </main>
     <div id="footer">
