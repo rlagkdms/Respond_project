@@ -74,9 +74,10 @@ function displayChatArray() {
         const textElement = document.createElement('p');
         textElement.textContent = chatArray[currentIndex];
 
-        if (!firstInput && textElement.textContent.includes(idText[0])) {
+        if (!firstInput && textElement.textContent.includes(idText[0]))
             textElement.style.color = '#fff849';
-        }
+        else
+            textElement.style.color = "#FFF";
 
         chatBox.appendChild(textElement);
         chatBox.scrollTop = chatBox.scrollHeight;
@@ -97,6 +98,7 @@ chatInput.addEventListener('keyup', function (event) {
             firstInput = false;
             chatId.textContent = 'Chat : ';
             chatBox.textContent = message + "  님이 입장하셨습니다.";
+            chatBox.style.color = '#FFF849';
         } else {
             chatText.push(message);
             const newChat = message;
