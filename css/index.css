@@ -25,11 +25,12 @@ section {
 
 #section1-title {
     color: #fff;
+    font-size: 55px;
+    line-height: 70px;
     margin-left: 170px;
     margin-right: 20px;
     padding-top: 300px;
     font-family: 'rose';
-    font-size: 2.9375rem;
 }
 
 #section2-box {
@@ -43,7 +44,7 @@ section {
     text-align: center;
     font-family: 'eosm';
     font-size: 2.625rem;
-    padding: 119.5px 0 61px 0;
+    padding: 150px 0 61px 0;
 }
 
 #section2-container img {
@@ -117,15 +118,15 @@ section {
 #section4-title {
     font-size: 2rem;
     margin-top: -680px;
-    margin-left: 230px;
+    margin-left: 200px;
     font-family: 'rose';
 }
 
 #section4-content {
-    width: 33%;
+    width: 40%;
     float: right;
     font-size: 1rem;
-    margin-left: 400px;
+    margin-left: 500px;
     margin-top: -250px;
     position: relative;
     line-height: 22.5px;
@@ -163,13 +164,39 @@ section {
     background-image: url('../img/section6.png');
 }
 
+#section7-container {
+    height: 700px;
+}
+
 #section7-title,
 #section8-title {
     font-size: 2rem;
     font-family: 'rose';
 }
 
+#section7-title {
+    margin: 0 0 0 160px;
+}
+
+#section8-title {
+    text-align: right;
+    margin-right: 160px;
+}
+
+#section7-title:nth-child(1),
+#section8-title:nth-child(1) {
+    padding-top: 123px;
+}
+
+#section7-box,
+#section8-box {
+    display: flex;
+    margin: 0 160px;
+    justify-content: space-between;
+}
+
 #section7-subtitle {
+    margin-left: 160px;
     font-size: 1.5rem;
     font-family: 'rose';
 }
@@ -185,9 +212,61 @@ section {
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
+    section {
+        height: 800px;
+    }
     #section1-title {
         padding-left: 20px;
+    }
+    #section4-title {
+        margin-bottom: 400px;
+        margin-left: 0;
+        margin-right: 400px;
+    }
+    #section4-box {
+        margin-top: -170px;
+        flex-direction: column-reverse;
+    }
+    #section4-container img {
+        width: 360px;
+    }
+    #section4-content {
+        width: 33%;
+        font-size: 16px;
+        margin-bottom: 40px;
+        margin-left: 300px;
+    }
+    #right {
+        float: right;
+        padding-top: 50px;
+        padding-right: 100px;
+    }
+    #section5-container {
+        height: 450px;
+        margin-top: -100px;
+        padding-top: 100px;
+    }
+    #section7-title,
+    #section7-subtitle {
+        margin-left: 100px;
+    }
+    #section8-title {
+        margin-right: 100px;
+    }
+    #section7-box,
+    #section8-box {
+        margin: 0 100px;
+    }
+    #section7-content,
+    #section8-content {
+        width: 340px;
+        font-size: 16px;
+    }
+    #section7-container img,
+    #section8-container img {
+        width: 373px;
+        height: 223px;
     }
 }
 
@@ -287,6 +366,6 @@ section {
     #section7-container img,
     #section8-container img {
         width: 440px;
-        margin: 0 20px;
+        margin: 0 27.5px;
     }
 }
