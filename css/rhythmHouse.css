@@ -171,7 +171,7 @@ span {
     color: #FFC700;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
     #main{
         position: relative;
         font-family: 'NeoDunggeunmoPro-Regular';
