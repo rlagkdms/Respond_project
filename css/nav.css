@@ -1,26 +1,86 @@
-#nav-container {
-    width: 100%;
-    height: 59px;
-    background-color: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+nav {
+    font-family: 'rose';
 }
 
-#nav-logo {
+@font-face {
+    font-family: 'rose';
+    src: url("../font/a장미다방.otf");
+}
+
+header {
+    top : 0;
+    right : 0;
+    left : 0;
+}
+
+nav {
+    height : 59px;
+    background-color: #000;
+}
+
+.nav.container {
+    display : flex;
+    justify-content : space-between;
+    align-items : center; 
+    padding : 0 16px;
+    color : #fff;
+}
+
+.nav.container a {
+    color : #fff;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.nav-logo img {
     width: 127px;
     height: 32px;
-    margin-left: 36px;
 }
 
-#nav-list {
-    display: flex;
-    column-gap: 80px;
+.nav-toggle {
+    font-size : 30px;
+    visibility : hidden;
+}
+
+.nav-list {
+    display : flex;
+    column-gap: 45px;
     list-style-type: none;
-    margin-right: 36px;
 }
 
-a {
-    text-decoration: none;
-    color: #fff;
+@media screen and (max-width: 1000px) {
+    .nav-list {
+        column-gap: 23px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .nav-list { 
+        position : absolute; 
+        top : 59px;
+        right : 0;
+        left : 0;
+        flex-direction: column;
+        text-align: center;
+        background-color: #000;
+        height : 0; 
+        transition: all 0.4s;
+        overflow: hidden;
+    }
+    .nav-item {
+        padding : 1em 0;
+        border-bottom: 2px solid #fff;
+        margin: 0 40px;
+    }
+    .nav-link {
+        display: block;
+    }
+    .nav-toggle {
+        visibility: visible;
+        position: absolute;
+        right : 20px;
+    }
+    .show-menu {
+        height : 213px;
+    }
 }
