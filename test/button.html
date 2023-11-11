@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 기본 스타일 */
+.button-container {
+    margin: 0 auto;
+    width: 67.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 22px;
+    column-gap: 64px;
+}
+
+button {
+  /* flex: 1; */
+  width: 195px;
+  height: 60px;
+  /* 다른 버튼 스타일을 여기에 추가할 수 있습니다. */
+  /* margin-: 5px; 간격 설정 */
+}
+
+/* 데스크탑 화면에서 4개씩 배치 */
+/* @media (min-width: 1024px) {
+  button {
+    flex-basis: calc(25% - 10px); /* 4개씩 배치, 간격을 조절합니다.
+  }
+} */
+
+/* 태블릿 화면에서 3개씩 배치 */
+@media (max-width: 1023px) {
+  button {
+    /* flex-basis: calc(33.33% - 10px); 3개씩 배치, 간격을 조절합니다. */
+    width: 177.7px;
+    height: 50px;
+}
+    .button-container{
+        row-gap: 22px;
+        column-gap: 58.34px;
+    }
+}
+
+/* 휴대폰 화면에서 2개씩 배치 */
+@media (max-width: 720px) {
+  /* button {
+    flex-basis: calc(50% - 10px); 2개씩 배치, 간격을 조절합니다.
+  } */
+
+  button {
+    /* flex-basis: calc(33.33% - 10px); 3개씩 배치, 간격을 조절합니다. */
+    width: 109px;
+    height: 33.5px;
+}
+    .button-container{
+        row-gap: 15px;
+        column-gap: 25px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="button-container">
+        <button>버튼 1</button>
+        <button>버튼 2</button>
+        <button>버튼 3</button>
+        <button>버튼 4</button>
+        <button>버튼 5</button>
+        <button>버튼 6</button>
+        <button>버튼 7</button>
+        <button>버튼 8</button>
+        <button>버튼 9</button>
+        <button>버튼 10</button>
+        <button>버튼 11</button>
+        <button>버튼 12</button>
+    </div>
+      
+</body>
+</html>
