@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,600;1,800&family=Hahmlet:wght@200;400;700&family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;500&family=Noto+Serif+KR&display=swap');
+@font-face {
+    font-family: 'EOSM';
+    src: local("EOSM 보통");
+    font-family: '';
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    width: 100%;
+}
+#fashion_banner{
+    width: 100%;
+    object-fit: cover;
+}
+/* .container{
+    width: 100%;
+    height: 615px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+} */
+.container {
+    height: 100%;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.back_box{
+    background-color: black;
+    color: white;
+    padding-bottom: 20px;
+}
+.content_box{
+    width: calc(100% - 274px);
+}
+.con{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+.tit{
+    position: relative;
+    font-family: 'EOSM';
+    font-size: 2.5em;
+    margin-top: 100px;
+    margin-bottom: 66px;
+}
+.txt{
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    line-height: 40px;
+    width: 51.45%;
+    /* margin-right: 100px; */
+}
+.subtit{
+    margin-top: 41px;
+}
+.img_group {
+    max-width: 100%;
+    min-width: 300px;
+    overflow: hidden;
+}
+
+.img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    display: block;
+
+}
+
+.img_one{
+   max-width: 250px;
+}
+/* .img_two{
+    width: 250px;
+}
+.img_three{
+    width: 250px;
+}
+.img_four{
+    width: 250px;
+} */
+
+/*태블릿 */
+@media screen and (max-width:1240px) { 
+    
+    
+    .container{
+        /* width: 100%; */
+        /* background-color: aquamarine; */
+    }
+    .txt{
+        width: 100%;
+    }
+    .img_group{
+        margin: 0 auto;
+        /* margin-top: 20px;
+        margin-bottom: 20px; */
+    }
+    .content_box{
+        width: 90%;
+        /* gap: 100px; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+}
+/* 모바일 */
+@media screen and (max-width: 540px) {
+    #fashion_banner{
+        content:url(/img/Group\ 70\ \(1\).png); 
+    }
+    .con{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .content_box{
+        width: 90%;
+        /* gap: 100px; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .txt{
+        width: 100%;
+    }
+}

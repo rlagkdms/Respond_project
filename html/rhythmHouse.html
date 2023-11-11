@@ -4,50 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/rhythmHouse.css">
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/footer.css">
     <title>Document</title>
 </head>
 <body>
-    <nav id="nav-container">
-        <a href="index.html" id="nav-logo">
-            <img src="../img/logo.png" style="width: 127px; height: 32px;">
-        </a>
-        <ul id="nav-list">
-            <li id="nav-item"><a href="#" id="nav-link">PC통신</a></li>
-            <li id="nav-item"><a href="#" id="nav-link">삐-삐</a></li>
-            <li id="nav-item"><a href="#" id="nav-link">패션-매거진</a></li>
-            <li id="nav-item"><a href="#" id="nav-link">리듬하우-쓰</a></li>
-        </ul>
-    </nav>
-    <div id="first-div">
-        <img src="../img/rhythmHouseBackImg.png"  id="backgrounc-img">
-        <div id="record-div">
-            <img src="../img/record.png" id="record-img">
-            <img src="../img/circle.png" class="record-circle">
-            <img src="../img/circle.png" class="record-circle" id="second-circle">
-        </div>
-        <div id="play-music-div">
-            <div id="music-info"></div>
-                <audio autoplay id="audio" class="audio" onloadstart="this.volume=0.5"></audio>  
-                <div class="progress-container" id="progress-container">
-                    <div class="progress" id="progress"></div>
-                </div> 
-            <div id="music-control">
-                <div id="before-song" onclick="playPrevSong()"><iconify-icon icon="streamline:interface-arrows-button-left-arrow-keyboard-left"></iconify-icon></div>
-                <div id="pause-song" onclick="playSong()"><iconify-icon icon="bytesize:pause" id="pause-song"></iconify-icon></div>
-                <div id="next-song" onclick="playNextSong()"><iconify-icon icon="streamline:interface-arrows-button-right-arrow-right-keyboard"></iconify-icon></div>
-            </div>
-        </div>
-    </div>
-    <div id="main">
-        <p id="main-title">국가가 청년에게 허락한 유일한 마약, 음악</p>
-        <p id="main-sub-title">아래 노래를 재생해보세요!</p>
-        <p id="playlist-title">나의 플레이리스트</p>
-        <div id="music-list-div">
-
-        </div>
-    </div> 
     
     <div id="footer">
         <img id="footer-logo" src="../img/logo.png" style="width: 127px; height: 32px;">
@@ -70,8 +29,6 @@
             <p>Privacy Policy</p>
         </div>
     </div>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script src="../js/rhythmHouse.js"></script>
-    <script src="../js/songData.js"></script>
+    <script href="../js/rhythmHouse.js"></script>
 </body>
 </html>
